@@ -5,7 +5,7 @@ function Navbar() {
   return (
   <nav  className="navbar navbar-expand-md bg-dark p-3 navbar-dark">
     <Link className="navbar-brand" to="#">
-    my Book App
+    My Book App
      </Link>
   <ul className="navbar-nav ms-auto">
     <li className="nav-item">
@@ -26,7 +26,9 @@ function Navbar() {
     </li>
 
     <li className="nav-item">
-        <Link to="/signup" className="nav-link">
+        <Link to="/signup" className="nav-link" style={{padding:"5px soliid blue", borderRadius:"5px solid blue"
+      
+        }}>
         Signup</Link>
     </li>
 

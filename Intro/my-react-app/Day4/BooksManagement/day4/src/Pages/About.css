@@ -1,0 +1,164 @@
+/* ------------------------------
+   Background with floating lights
+--------------------------------*/
+.about-container {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background: radial-gradient(circle at 20% 30%, #74b9ff 0%, #0984e3 40%, #2d3436 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* floating particles */
+.about-container::before,
+.about-container::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.18);
+  filter: blur(120px);
+  border-radius: 50%;
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+.about-container::before {
+  top: 10%;
+  left: 5%;
+}
+
+.about-container::after {
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+/* float animation */
+@keyframes float {
+  from { transform: translateY(0px) scale(1); }
+  to { transform: translateY(-40px) scale(1.15); }
+}
+
+/* ------------------------------
+        Glass Card Advanced
+--------------------------------*/
+.about-card {
+  width: 90%;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 45px;
+  border-radius: 22px;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+     0 20px 45px rgba(0, 0, 0, 0.30),
+     inset 0 0 15px rgba(255, 255, 255, 0.15);
+
+  animation: fadeIn 1s ease-out;
+  color: #f1f1f1;
+  position: relative;
+}
+
+/* Glow border effect */
+.about-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0), rgba(0,150,255,0.5));
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ------------------------------
+         Title Section
+--------------------------------*/
+.about-title {
+  font-size: 36px;
+  margin-bottom: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #dfe6e9, #74b9ff, #81ecec);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+/* animated underline */
+.about-title::after {
+  content: "";
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #6c5ce7, #00cec9);
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  animation: underline 1.4s ease-out;
+}
+
+@keyframes underline {
+  from { width: 0; opacity: 0; }
+  to { width: 120px; opacity: 1; }
+}
+
+/* ------------------------------
+           Text
+--------------------------------*/
+.about-text {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1.9;
+  color: #f2f2f2;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.about-text:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.about-text:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* text animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* fadeIn for card */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .about-card {
+    padding: 28px;
+  }
+  .about-title {
+    font-size: 26px;
+  }
+  .about-text {
+    font-size: 16px;
+  }
+}

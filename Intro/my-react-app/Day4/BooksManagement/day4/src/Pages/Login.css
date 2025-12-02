@@ -1,0 +1,110 @@
+/* 🌈 Full Gradient Background */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  background-size: cover;
+}
+
+/* 🌟 Login Card */
+.login-card {
+  width: 330px;
+  background: #ffffffee;
+  padding: 32px 35px;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+  border-top: 6px solid #2575fc;
+  border-bottom: 6px solid #6a11cb;
+
+  animation: fadeLogin 0.7s ease;
+}
+
+/* Animation */
+@keyframes fadeLogin {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Heading */
+.login-card h3 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+/* Labels */
+.login-card label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Inputs */
+.login-card input {
+  width: 100%;
+  padding: 10px 12px;
+
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  background: #fff;
+
+  font-size: 14px;
+  outline: none;
+  transition: 0.25s ease;
+  margin-bottom: 12px;
+}
+
+.login-card input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.4);
+}
+
+/* 🔘 Login Button (Gradient) */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+  margin-top: 5px;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+}
+
+/* Signup Link */
+.login-card .signup-text {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.login-card a {
+  color: #6a11cb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+}
